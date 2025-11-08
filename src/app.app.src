@@ -1,0 +1,13 @@
+{application, app,
+[
+  {description, "blog"},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+      kernel,
+      stdlib,
+	  cowboy
+    ]},
+  {mod, {app, []}},
+  {env, []}
+]}.
