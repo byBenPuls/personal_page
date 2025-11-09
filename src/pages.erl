@@ -6,7 +6,8 @@
 -export([get_accept_lang/1]).
 
 build_filename(Name) ->
-    "priv/static/" ++ Name ++ ".html".
+    filename:join(
+        code:priv_dir(app), "static/" ++ Name ++ ".html").
 
 render_page(PageName, []) ->
     {ok, Data} = file:read_file(build_filename(PageName)),
