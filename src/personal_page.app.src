@@ -1,0 +1,16 @@
+%% -*- mode: erlang;erlang-indent-level: 4;indent-tabs-mode: nil -*-
+{application,
+ personal_page,
+ [{description, "Personal Page"},
+  {vsn, git},
+  {registered, []},
+  {mod, {personal_page_app, []}},
+  {included_applications, []},
+  {applications, [kernel, stdlib, nova]},
+  {env, []},
+  {modules, []},
+  {maintainers, []},
+  {licenses, ["Apache 2.0"]},
+  {links, []}]}
+
+.

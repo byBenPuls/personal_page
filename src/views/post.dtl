@@ -1,0 +1,15 @@
+{% extends "components/base.html" %}
+{% block content %}
+<main>
+  <article>
+    <h1>{{ post.title }}</h1>
+    <small>{{ post.date }}</small>
+    <hr>
+    <div>
+      {{ post.content | safe }}
+    </div>
+    <hr>
+    <p><a href="/blog">← Back to all posts</a></p>
+  </article>
+</main>
+{% endblock %}
