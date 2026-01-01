@@ -1,5 +1,4 @@
-{% extends "base.html" %}
-
+{% extends "components/base.html" %}
 {% block content %}
 <main>
     {% for p in posts %}

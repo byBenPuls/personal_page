@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "components/base.html" %}
 {% block content %}
 <main>
   <h2>Who I Am</h2>
