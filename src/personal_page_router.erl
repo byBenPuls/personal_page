@@ -7,21 +7,29 @@
 -define(MAIN, personal_page_main_controller).
 
 section(Prefix, Security, Routes) ->
-    #{prefix => Prefix,
-      security => Security,
-      routes => Routes}.
+    #{
+        prefix => Prefix,
+        security => Security,
+        routes => Routes
+    }.
 
-route(Path, Module, Func, Methods) ->
-    {Path, {Module, Func}, #{method => Methods}}.
+route(Path, Func, Methods) when is_list(Methods) ->
+    {Path, Func, #{method => Methods}};
+route(Path, Func, Params) when is_map(Params) ->
+    {Path, Func, Params}.
 
 main() ->
-    section("",
-            false,
-            [route("/", ?MAIN, index, [get]),
-             route("/projects", ?MAIN, projects, [get]),
-             route("/consultations", ?MAIN, consultations, [get]),
-             route("/blog", ?MAIN, blog, [get]),
-             route("/post:id", ?MAIN, post, [get])]).
+    section(
+        "",
+        false,
+        [
+            route(404, fun ?MAIN:not_found/1, #{}),
+            route(500, fun ?MAIN:not_found/1, #{}),
+            route("/", fun ?MAIN:index/1, [get]),
+            route("/projects", fun ?MAIN:projects/1, [get]),
+            route("/consultations", fun ?MAIN:consultations/1, [get])
+        ]
+    ).
 
 %% The Environment-variable is defined in your sys.config in {nova, [{environment, Value}]}
 routes(_Environment) ->
