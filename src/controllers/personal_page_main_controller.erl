@@ -5,8 +5,6 @@
 -fallback_controller(personal_page_fallback_controller).
 
 index(_Req) ->
-    io:write(_Req),
-
     view("About", index).
 
 consultations(_Req) ->
