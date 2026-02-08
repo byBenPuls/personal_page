@@ -27,7 +27,8 @@ main() ->
             route(500, fun ?MAIN:not_found/1, #{}),
             route("/", fun ?MAIN:index/1, [get]),
             route("/projects", fun ?MAIN:projects/1, [get]),
-            route("/consultations", fun ?MAIN:consultations/1, [get])
+            route("/consultations", fun ?MAIN:consultations/1, [get]),
+            route("/static/[...]", "static", #{list_dir => false})
         ]
     ).
 

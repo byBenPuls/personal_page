@@ -10,13 +10,9 @@
     <li>Stoic philosophical reasoning — clarity in decisions</li>
     <li>Ancient Greek language fundamentals & translation</li>
   </ul>
-  <h2>Book a Session</h2>
-  <form action="" method="POST">
-    <label>Email</label>
-    <input type="email" placeholder="you@mail.com" autocomplete="email" id="email" required>
-    <label>Message</label>
-    <textarea rows="5" placeholder="Describe your request..." required></textarea>
-    <input type="submit" value="Send Request">
-  </form>
+  <h2>Contacts</h2>
+  <ul>
+    <li><a href="mailto:mail@benpuls.ru">mail@benpuls.ru</a></li>
+  </ui>
 </main>
 {% endblock %}
